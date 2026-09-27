@@ -144,7 +144,7 @@ function Contact() {
 }
 
 function Footer() {
-  return <footer className="border-t border-[#f5f0e8]/10 bg-[#141210] py-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 text-[12px] sm:px-8"><span className="text-[#f5f0e8]/30">© {new Date().getFullYear()} {BRAND}.</span><span className="text-[#f5f0e8]/30">Website template by <a href="https://www.spicerdesigns.com" className="text-[#f97316] hover:underline">Spicer Designs</a></span></div></footer>
+  return <footer className="border-t border-[#f5f0e8]/10 bg-[#141210] py-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 text-[12px] sm:px-8"><span className="text-[#f5f0e8]/30">© {new Date().getFullYear()} {BRAND}.</span><span className="text-[#f5f0e8]/30"><a href="https://www.spicerdesigns.com" className="text-[#f97316] hover:underline">Spicer Designs</a></span></div></footer>
 }
 
 export default function BarberShopTemplate() {
