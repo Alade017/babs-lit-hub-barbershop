@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Babs Lit Hub Barbershop Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #141210;
+        color: #f5f0e8;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .top {
+        background: #f97316;
+        color: #17120e;
+        text-align: center;
+        padding: 10px;
+        font: 700 11px monospace;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .nav {
+        max-width: 1180px;
+        margin: auto;
+        padding: 24px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-family: Georgia, serif;
+        font-size: 22px;
+      }
+      .links {
+        display: flex;
+        gap: 28px;
+        font: 11px monospace;
+        text-transform: uppercase;
+        color: #aaa;
+      }
+      .btn {
+        background: #f97316;
+        color: #17120e;
+        padding: 14px 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      .hero {
+        min-height: 640px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            90deg,
+            #141210 15%,
+            rgba(20, 18, 16, 0.88),
+            rgba(20, 18, 16, 0.3)
+          ),
+          url("hero.webp") center/cover;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding: 0 28px;
+      }
+      .heroGrid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 70px;
+        align-items: center;
+        padding-top: 90px;
+      }
+      .tag {
+        font: 10px monospace;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #f97316;
+      }
+      .h1 {
+        font:
+          normal 76px/0.94 Georgia,
+          serif;
+        letter-spacing: -0.04em;
+        margin: 24px 0;
+      }
+      .orange {
+        color: #f97316;
+      }
+      .lead {
+        max-width: 580px;
+        color: #aaa;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 30px;
+      }
+      .outline {
+        border: 1px solid #ffffff28;
+        padding: 14px 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .card {
+        background: #1e1a17dd;
+        border: 1px solid #ffffff18;
+        padding: 32px;
+        border-radius: 8px;
+      }
+      .card h2 {
+        font:
+          40px Georgia,
+          serif;
+        margin: 18px 0;
+      }
+      .card p {
+        color: #999;
+        line-height: 1.6;
+      }
+      .section {
+        padding: 90px 0;
+      }
+      .alt {
+        background: #1a1714;
+        border-top: 1px solid #ffffff12;
+        border-bottom: 1px solid #ffffff12;
+      }
+      .title {
+        font:
+          normal 52px/1.05 Georgia,
+          serif;
+        margin: 18px 0;
+      }
+      .sub {
+        color: #999;
+        max-width: 650px;
+        line-height: 1.7;
+      }
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: #ffffff15;
+        border: 1px solid #ffffff15;
+        margin-top: 45px;
+      }
+      .service {
+        background: #141210;
+        padding: 30px;
+      }
+      .num {
+        color: #f97316;
+        font: 11px monospace;
+      }
+      .service h3 {
+        font:
+          27px Georgia,
+          serif;
+      }
+      .service p {
+        color: #999;
+        line-height: 1.6;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 30px;
+      }
+      .chip {
+        border: 1px solid #ffffff12;
+        background: #1e1a17;
+        border-radius: 999px;
+        padding: 9px 14px;
+        color: #aaa;
+        font-size: 12px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 40px;
+      }
+      .stat {
+        border: 1px solid #ffffff12;
+        background: #1e1a17;
+        padding: 28px;
+        border-radius: 8px;
+      }
+      .stat strong {
+        font:
+          46px Georgia,
+          serif;
+        color: #f97316;
+      }
+      .stat span {
+        display: block;
+        color: #888;
+        margin-top: 7px;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        border: 1px solid #f9731640;
+        background: #1a1714;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .contact > div {
+        padding: 48px;
+      }
+      .contact > div + div {
+        border-left: 1px solid #ffffff12;
+      }
+      .footer {
+        border-top: 1px solid #ffffff12;
+        padding: 30px;
+        color: #777;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer a {
+        color: #f97316;
+      }
+      @media (max-width: 800px) {
+        .links {
+          display: none;
+        }
+        .heroGrid {
+          grid-template-columns: 1fr;
+          padding-top: 60px;
+        }
+        .h1 {
+          font-size: 55px;
+        }
+        .grid3,
+        .stats,
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .contact > div + div {
+          border-left: 0;
+          border-top: 1px solid #ffffff12;
+        }
+        .section {
+          padding: 65px 0;
+        }
+        .title {
+          font-size: 40px;
+        }
+        .footer {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .hero {
+          min-height: auto;
+          padding-bottom: 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      Babs Lit Hub Barbershop · Osogbo, Osun · Closes 10:30 PM
+    </div>
+    <div class="hero">
+      <nav class="nav">
+        <div class="brand">Babs Lit Hub Barbershop</div>
+        <div class="links">
+          <a href="#services">Services</a><a href="#about">About</a
+          ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+        </div>
+        <a class="btn" href="https://wa.me/2348028293299">WhatsApp</a>
+      </nav>
+      <div class="wrap heroGrid">
+        <div>
+          <div class="tag">Your local barbershop · Osogbo</div>
+          <div class="h1">
+            Clean cuts.<br /><span class="orange">Sharp confidence.</span>
+          </div>
+          <p class="lead">
+            Looking sharp in Osogbo starts with a good cut. Call or WhatsApp the
+            shop to ask about services and plan your visit.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/2348028293299"
+              >Book on WhatsApp</a
+            ><a
+              class="outline"
+              href="https://www.google.com/maps/search/?api=1&query=QG4G%2BP68%2C%20Ladipo%20St%2C%20behind%20Bovas%2C%20Osogbo%20230284%2C%20Osun"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Visit Babs Lit Hub Barbershop</div>
+          <h2>Your next clean look starts here.</h2>
+          <p>
+            <b style="color: #f5f0e8">Location</b><br />QG4G+P68, Ladipo St,
+            behind Bovas, Osogbo 230284, Osun
+          </p>
+          <p><b style="color: #f5f0e8">Phone</b><br />0802 829 3299</p>
+          <p><b style="color: #f5f0e8">Closing time</b><br />10:30 PM</p>
+        </div>
+      </div>
+    </div>
+    <section id="services" class="section alt">
+      <div class="wrap">
+        <div class="tag">What we offer</div>
+        <div class="title">Grooming services built around the details.</div>
+        <p class="sub">
+          From clean cuts and beard maintenance to colour and scalp care, choose
+          the service that fits your look.
+        </p>
+        <div class="grid3">
+          <div class="service">
+            <div class="num">01</div>
+            <h3>Hair Colouring</h3>
+            <p>Professional colour services for a fresh, confident look.</p>
+          </div>
+          <div class="service">
+            <div class="num">02</div>
+            <h3>Beard Care</h3>
+            <p>Beard conditioning, dyeing, maintenance and clean trims.</p>
+          </div>
+          <div class="service">
+            <div class="num">03</div>
+            <h3>Head Shave</h3>
+            <p>A clean, close shave with careful attention to detail.</p>
+          </div>
+          <div class="service">
+            <div class="num">04</div>
+            <h3>Children's Cuts</h3>
+            <p>Neat, comfortable cuts for younger clients.</p>
+          </div>
+          <div class="service">
+            <div class="num">05</div>
+            <h3>Scalp Treatment</h3>
+            <p>Care-focused scalp and hair treatment services.</p>
+          </div>
+          <div class="service">
+            <div class="num">06</div>
+            <h3>Hair Care Products</h3>
+            <p>Selected grooming and hair-care products available in-store.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="tag">About the shop</div>
+        <div class="title">A local grooming destination in Osogbo.</div>
+        <p class="sub">
+          Babs Lit Hub Barbershop is a local spot for a fresh cut and personal
+          grooming. Get in touch to ask about available services and plan your
+          visit.
+        </p>
+        <div class="chips">
+          <span class="chip">Hair colouring</span
+          ><span class="chip">Beard trim</span
+          ><span class="chip">Head shave</span
+          ><span class="chip">Children's cuts</span
+          ><span class="chip">Scalp treatment</span
+          ><span class="chip">Shave</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>5.0</strong><span>Google rating</span></div>
+          <div class="stat"><strong>1</strong><span>Google review</span></div>
+          <div class="stat">
+            <strong>10:30 PM</strong><span>Listed closing time</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="tag">Visit or get in touch</div>
+            <div class="title">Ready for your next clean look?</div>
+            <p class="sub">
+              Call or WhatsApp Babs Lit Hub Barbershop to ask about services and
+              availability before you come around.
+            </p>
+            <div class="actions">
+              <a class="btn" href="https://wa.me/2348028293299"
+                >Chat on WhatsApp</a
+              ><a class="outline" href="tel:+2348028293299"
+                >Call 0802 829 3299</a
+              >
+            </div>
+          </div>
+          <div>
+            <div class="tag">Find us</div>
+            <div class="title" style="font-size: 36px">
+              Ladipo Street, behind Bovas
+            </div>
+            <p class="sub">QG4G+P68, Osogbo 230284, Osun</p>
+            <a
+              class="btn"
+              style="display: inline-block; margin-top: 20px"
+              href="https://www.google.com/maps/search/?api=1&query=QG4G%2BP68%2C%20Ladipo%20St%2C%20behind%20Bovas%2C%20Osogbo%20230284%2C%20Osun"
+              >Open in Google Maps</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>© 2026 Babs Lit Hub Barbershop.</span
+      ><span
+        >Template by
+        <a href="https://www.spicerdesigns.com">Spicer Designs</a></span
+      >
+    </footer>
+  </body>
+</html>
